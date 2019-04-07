@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { nav } from '../config';
 
 import Head from '../components/head';
-import Loader from '../components/loader';
+// import Loader from '../components/loader';
 import Header from '../components/header';
 import Social from '../components/social';
 import Email from '../components/email';
@@ -55,14 +55,14 @@ class Layout extends Component {
   };
 
   state = {
-    isLoading: true,
+    // isLoading: true,
   };
 
   finishLoading = () => this.setState({ isLoading: false });
 
   render() {
     const { children, location } = this.props;
-    const { isLoading } = this.state;
+    // const { isLoading } = this.state;
 
     return (
       <StaticQuery
