@@ -50,7 +50,7 @@ const Skill = styled.li`
 `;
 const PicContainer = styled.div`
   position: relative;
-  width: 40%;
+  width: 23%;
   max-width: 300px;
   margin-left: 60px;
   ${media.tablet`margin: 60px auto 0;`};
