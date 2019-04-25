@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { nav } from '../config';
 
 import Head from '../components/head';
-// import Loader from '../components/loader';
+import Loader from '../components/loader';
 import Header from '../components/header';
 import Social from '../components/social';
 import Email from '../components/email';
@@ -13,9 +13,9 @@ import Footer from '../components/footer';
 
 import styled from 'styled-components';
 import '../styles/base';
-import { theme } from '../styles';
+import { theme, A } from '../styles';
 
-const SkipToContent = styled.a`
+const SkipToContent = styled(A)`
   position: absolute;
   top: auto;
   left: -999px;
@@ -55,14 +55,14 @@ class Layout extends Component {
   };
 
   state = {
-    // isLoading: true,
+    isLoading: true,
   };
 
   finishLoading = () => this.setState({ isLoading: false });
 
   render() {
     const { children, location } = this.props;
-    // const { isLoading } = this.state;
+    const { isLoading } = this.state;
 
     return (
       <StaticQuery
@@ -80,15 +80,20 @@ class Layout extends Component {
         render={data => (
           <div id="root">
             <Head metaData={data.site.siteMetadata} />
-            <SkipToContent href="#content">Skip To Content</SkipToContent>(
-            <div className="container">
-              <Header location={location} navLinks={nav} />
-              <Social />
-              <Email />
-              {children}
-              <Footer />
-            </div>
-            )
+
+            <SkipToContent href="#content">Skip To Content</SkipToContent>
+
+            {isLoading ? (
+              <Loader finishLoading={this.finishLoading} />
+            ) : (
+              <div className="container">
+                <Header location={location} navLinks={nav} />
+                <Social />
+                <Email />
+                {children}
+                <Footer />
+              </div>
+            )}
           </div>
         )}
       />

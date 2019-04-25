@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-import resume from '../images/resume.pdf';
+import resume from '../../static/resume.pdf';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav } from '../styles';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -43,14 +43,13 @@ const NavLinks = styled(Nav)`
   flex-direction: column;
   text-align: center;
 `;
-const NavList = styled.ol`
+const NavList = styled(Ol)`
   width: 100%;
 `;
 const NavListItem = styled.li`
   margin: 0 auto 20px;
   position: relative;
   font-size: ${theme.fontSizes.large};
-  counter-increment: item 1;
   ${media.thone`
     margin: 0 auto 10px;
     font-size: ${theme.fontSizes.medium};
@@ -58,20 +57,13 @@ const NavListItem = styled.li`
   ${media.tiny`
     font-size: ${theme.fontSizes.smallish};
   `};
-  &:before {
-    display: block;
-    content: '0' counter(item) '.';
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.small};
-    margin-bottom: 5px;
-  }
 `;
 const NavLink = styled(AnchorLink)`
   ${mixins.link};
   padding: 3px 20px 20px;
   width: 100%;
 `;
-const ResumeLink = styled.a`
+const ResumeLink = styled(A)`
   ${mixins.bigButton};
   padding: 18px 50px;
   margin: 10% auto 0;

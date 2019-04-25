@@ -7,13 +7,13 @@ import { Link } from 'gatsby';
 import { throttle } from '../utils';
 
 import { headerHeight } from '../config';
-import resume from '../images/resume.pdf';
+import resume from '../../static/resume.pdf';
 
 import Menu from '../components/menu';
 import { IconLogo } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav } from '../styles';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const HeaderContainer = styled.header`
   ${mixins.flexBetween};
@@ -40,8 +40,8 @@ const HeaderContainer = styled.header`
 const Navbar = styled(Nav)`
   ${mixins.flexBetween};
   font-family: ${theme.fonts.SFMono};
+  width: 100%;
   color: ${theme.colors.lightestSlate};
-  counter-reset: item 0;
   position: relative;
   z-index: 12;
 `;
@@ -135,7 +135,7 @@ const NavLinks = styled.div`
   align-items: center;
   ${media.tablet`display: none;`};
 `;
-const NavList = styled.ol`
+const NavList = styled(Ol)`
   div {
     ${mixins.flexBetween};
   }
@@ -144,19 +144,13 @@ const NavListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${theme.fontSizes.smallish};
-  counter-increment: item 1;
-  &:before {
-    content: '0' counter(item) '.';
-    text-align: right;
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.xsmall};
-  }
 `;
 const NavLink = styled(AnchorLink)`
+  ${mixins.link};
   padding: 12px 10px;
 `;
 const ResumeButton = styled.div``;
-const ResumeLink = styled.a`
+const ResumeLink = styled(A)`
   ${mixins.smallButton};
   margin-left: 10px;
   font-size: ${theme.fontSizes.smallish};

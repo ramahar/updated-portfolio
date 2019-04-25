@@ -6,18 +6,18 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, media } from '../styles';
+import { theme, media, A, Ul } from '../styles';
 
 const SocialContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
-  left: 40px;
+  right: 40px;
   color: ${theme.colors.lightSlate};
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};
 `;
-const SocialItemList = styled.ul`
+const SocialItemList = styled(Ul)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,7 +35,7 @@ const SocialItem = styled.li`
     margin-bottom: 20px;
   }
 `;
-const SocialLink = styled.a`
+const SocialLink = styled(A)`
   padding: 10px;
   svg {
     width: 18px;

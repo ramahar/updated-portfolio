@@ -15,12 +15,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "start": "gatsby develop"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && lint-staged"
-    }
+    "start": "gatsby develop",
+    "precommit": "pretty-quick --staged && lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -29,44 +25,44 @@
     ]
   },
   "dependencies": {
-    "animejs": "^3.0.1",
-    "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.1.4",
-    "gatsby-image": "^2.0.29",
-    "gatsby-plugin-google-analytics": "^2.0.14",
-    "gatsby-plugin-manifest": "^2.0.17",
-    "gatsby-plugin-netlify": "^2.0.11",
-    "gatsby-plugin-offline": "^2.0.23",
-    "gatsby-plugin-react-helmet": "^3.0.6",
-    "gatsby-plugin-robots-txt": "^1.4.0",
-    "gatsby-plugin-sharp": "^2.0.20",
-    "gatsby-plugin-sitemap": "^2.0.5",
-    "gatsby-plugin-styled-components": "^3.0.5",
+    "animejs": "^2.2.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "gatsby": "^2.0.18",
+    "gatsby-image": "^2.0.13",
+    "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-netlify": "^2.0.1",
+    "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-robots-txt": "^1.3.0",
+    "gatsby-plugin-sharp": "^2.0.6",
+    "gatsby-plugin-sitemap": "^2.0.1",
+    "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^3.0.4",
-    "gatsby-source-filesystem": "^2.0.20",
-    "gatsby-transformer-remark": "^2.2.5",
-    "gatsby-transformer-sharp": "^2.1.13",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.2",
+    "gatsby-remark-images": "^2.0.3",
+    "gatsby-source-filesystem": "^2.0.1",
+    "gatsby-transformer-remark": "^2.1.6",
+    "gatsby-transformer-sharp": "^2.1.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
-    "react-dom": "^16.8.2",
+    "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
-    "react-transition-group": "^2.5.3",
-    "scrollreveal": "^4.0.5",
-    "styled-components": "^4.1.3"
+    "react-transition-group": "^2.5.0",
+    "scrollreveal": "^4.0.4",
+    "styled-components": "^3.4.9"
   },
   "devDependencies": {
-    "@upstatement/eslint-config": "0.4.0",
-    "@upstatement/prettier-config": "^0.3.0",
+    "@upstatement/eslint-config": "0.2.1",
+    "@upstatement/prettier-config": "^0.2.1",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.14.1",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0"
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.7.0"
   }
 }

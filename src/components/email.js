@@ -4,9 +4,10 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { email } from '../config';
 
 import styled from 'styled-components';
-import { theme, media } from '../styles';
+import { theme, media, A } from '../styles';
 
 const EmailContainer = styled.div`
+  display: none;
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -33,7 +34,7 @@ const EmailLinkWrapper = styled.div`
     background-color: ${theme.colors.lightSlate};
   }
 `;
-const EmailLink = styled.a`
+const EmailLink = styled(A)`
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xsmall};
   letter-spacing: 0.5px;

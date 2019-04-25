@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, H3, P } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -159,16 +159,6 @@ class Jobs extends Component {
   componentDidMount() {
     ScrollReveal().reveal(this.jobs, srConfig());
   }
-  sortPlacesWorked = (workPlaceA, workPlaceB) => {
-    if (workPlaceA.node.frontmatter.company < workPlaceB.node.frontmatter.company) {
-      return -1;
-    }
-    if (workPlaceA.node.frontmatter.company > workPlaceB.node.frontmatter.company) {
-      return 1;
-    }
-    // a must be equal to b
-    return 0;
-  };
 
   isActive = id => this.state.activeTabId === id;
 
@@ -177,13 +167,14 @@ class Jobs extends Component {
   render() {
     const { activeTabId } = this.state;
     const { data } = this.props;
+
     return (
       <JobsContainer id="jobs" innerRef={el => (this.jobs = el)}>
-        <H3>Where I've Worked</H3>
+        <H3>Experience</H3>
         <TabsContainer>
           <Tabs role="tablist">
             {data &&
-              data.sort(this.sortPlacesWorked).map(({ node }, i) => (
+              data.map(({ node }, i) => (
                 <Tab
                   key={i}
                   isActive={this.isActive(i)}
@@ -192,7 +183,7 @@ class Jobs extends Component {
                   aria-selected={this.isActive(i) ? 'true' : 'false'}
                   aria-controls={`tab${i}`}
                   id={`tab${i}`}
-                  tabIndex={this.isActive(i) ? '0' : '-1'}>
+                  tabindex={this.isActive(i) ? '0' : '-1'}>
                   <span>{node.frontmatter.company}</span>
                 </Tab>
               ))}
@@ -206,7 +197,7 @@ class Jobs extends Component {
                   isActive={this.isActive(i)}
                   id={`job${i}`}
                   role="tabpanel"
-                  tabIndex="0"
+                  tabindex="0"
                   aria-labelledby={`job${i}`}
                   aria-hidden={!this.isActive(i)}>
                   <JobTitle>
@@ -224,7 +215,7 @@ class Jobs extends Component {
                   <JobDetails>
                     <span>{node.frontmatter.range}</span>
                   </JobDetails>
-                  <p dangerouslySetInnerHTML={{ __html: node.html }} />
+                  <P dangerouslySetInnerHTML={{ __html: node.html }} />
                 </TabContent>
               ))}
           </ContentContainer>

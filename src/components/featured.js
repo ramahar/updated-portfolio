@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import ScrollReveal from 'scrollreveal';
 import { srConfig } from '../config';
+
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, H3, Ul, A } from '../styles';
+
+import ScrollReveal from 'scrollreveal';
 
 const FeaturedContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -65,7 +67,7 @@ const ProjectDescription = styled.div`
     color: ${theme.colors.white};
   }
 `;
-const TechList = styled.ul`
+const TechList = styled(Ul)`
   display: flex;
   flex-wrap: wrap;
   margin: 25px 0 10px;
@@ -225,13 +227,13 @@ class Featured extends Component {
                   <FeaturedLabel>Featured Project</FeaturedLabel>
                   <ProjectName>
                     {node.frontmatter.external ? (
-                      <a
+                      <A
                         href={node.frontmatter.external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label="External Link">
                         {node.frontmatter.title}
-                      </a>
+                      </A>
                     ) : (
                       node.frontmatter.title
                     )}
@@ -246,22 +248,22 @@ class Featured extends Component {
                   )}
                   <Links>
                     {node.frontmatter.github && (
-                      <a
+                      <A
                         href={node.frontmatter.github}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label="Github Link">
                         <IconGithub />
-                      </a>
+                      </A>
                     )}
                     {node.frontmatter.external && (
-                      <a
+                      <A
                         href={node.frontmatter.external}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                         aria-label="External Link">
                         <IconExternal />
-                      </a>
+                      </A>
                     )}
                   </Links>
                 </ContentContainer>

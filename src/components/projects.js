@@ -7,7 +7,7 @@ import { srConfig } from '../config';
 import { IconGithub, IconExternal, IconFolder } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, Button } from '../styles';
+import { theme, mixins, media, Section, Ul, A, Button } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -72,7 +72,7 @@ const Links = styled.div`
   margin-right: -10px;
   color: ${theme.colors.lightSlate};
 `;
-const IconLink = styled.a`
+const IconLink = styled(A)`
   padding: 10px;
   svg {
     width: 22px;
@@ -84,7 +84,7 @@ const ProjectName = styled.h5`
   font-size: ${theme.fontSizes.xxlarge};
   color: ${theme.colors.lightestSlate};
 `;
-const ProjectLink = styled.a``;
+const ProjectLink = styled(A)``;
 const ProjectDescription = styled.div`
   font-size: 17px;
   line-height: 1.25;
@@ -92,7 +92,7 @@ const ProjectDescription = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const TechList = styled.ul`
+const TechList = styled(Ul)`
   flex-grow: 1;
   display: flex;
   align-items: flex-end;
@@ -110,6 +110,7 @@ const TechList = styled.ul`
   }
 `;
 const ShowMoreButton = styled(Button)`
+  ${mixins.bigButton};
   margin: 100px auto 0;
 `;
 
@@ -217,9 +218,11 @@ class Projects extends Component {
           </TransitionGroup>
         </ProjectsGrid>
 
-        <ShowMoreButton onClick={this.showMoreToggle}>
-          {showMore ? 'Fewer' : 'More'} Projects
-        </ShowMoreButton>
+        {false && (
+          <ShowMoreButton onClick={this.showMoreToggle}>
+            {showMore ? 'Fewer' : 'More'} Projects
+          </ShowMoreButton>
+        )}
       </ProjectsContainer>
     );
   }

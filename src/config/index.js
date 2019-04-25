@@ -1,14 +1,16 @@
 module.exports = {
   siteTitle: 'Rayyan Mahar | Software Developer',
-  siteDescription:
-    'Software engineer based in San Francisco, CA.',
+  siteDescription: 'Software engineer based in San Francisco, CA.',
   siteKeywords:
     'Rayyan Mahar, software engineer, front-end engineer, web developer, javascript, developer',
-  siteUrl: 'https://ramahar.github.io',
+  siteUrl: 'https://www.rayyanmahar.com',
   siteLanguage: 'en_US',
+  // siteImage: '../static/logo.png',
+  // siteIcon: '../static/logo.png',
 
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: '',
 
+  avatar: '/logos/social.png',
   name: 'Rayyan Mahar',
   location: 'San Francisco, CA',
   email: 'rayyanamahar@gmail.com',
@@ -32,27 +34,27 @@ module.exports = {
       name: 'About',
       url: '#about',
     },
-    // {
-    //   name: 'Experience',
-    //   url: '#jobs',
-    // },
     {
       name: 'Projects',
       url: '#projects',
     },
+    // {
+    //   name: 'Experience',
+    //   url: '#jobs',
+    // },
     {
       name: 'Contact',
       url: '#contact',
     },
   ],
 
-  googleAnalyticsID: 'UA-45666519-2',
+  twitterHandle: '@rayyan',
+  googleAnalyticsID: 'UA-126621624-1',
 
   headerHeight: 100,
 
   greenColor: '#64ffda',
   navyColor: '#0a192f',
-  darkNavyColor: '#020c1b',
 
   srConfig: (delay = 200) => {
     return {

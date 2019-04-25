@@ -5,7 +5,7 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media } from '../styles';
+import { theme, mixins, media, A, Ul } from '../styles';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
@@ -24,26 +24,17 @@ const SocialContainer = styled.div`
   display: none;
   ${media.tablet`display: block;`};
 `;
-const SocialItemList = styled.ul`
+const SocialItemList = styled(Ul)`
   ${mixins.flexBetween};
 `;
 const SocialItem = styled.li``;
-const SocialLink = styled.a`
+const SocialLink = styled(A)`
   padding: 10px;
   svg {
     width: 20px;
     height: 20px;
   }
 `;
-const Copy = styled.p`
-  margin: 5px 0 3px;
-`;
-const GithubLink = styled.a`
-  color: ${theme.colors.slate};
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xsmall};
-`;
-
 const Footer = () => (
   <FooterContainer>
     <SocialContainer>
@@ -74,14 +65,6 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>
-      <GithubLink
-        href="https://github.com/ramahar"
-        target="_blank"
-        rel="nofollow noopener noreferrer">
-        2019 | Rayyan Mahar
-      </GithubLink>
-    </Copy>
   </FooterContainer>
 );
 

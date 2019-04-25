@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { srConfig } from '../config';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3 } from '../styles';
+import { theme, mixins, media, Section, H3, P, Ul } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const SkillsContainer = styled.ul`
+const SkillsContainer = styled(Ul)`
   margin-top: 20px;
   display: grid;
   overflow: hidden;
@@ -34,7 +34,6 @@ const SkillsContainer = styled.ul`
 const Skill = styled.li`
   position: relative;
   margin-bottom: 10px;
-  margin-top: 20px;
   padding-left: 20px;
   font-family: ${theme.fonts.SFMono};
   font-size: ${theme.fontSizes.xlarge};
@@ -50,13 +49,16 @@ const Skill = styled.li`
 `;
 const PicContainer = styled.div`
   position: relative;
-  width: 23%;
+  width: 25%;
   max-width: 300px;
   margin-left: 60px;
   ${media.tablet`margin: 60px auto 0;`};
   ${media.phablet`width: 70%;`};
 `;
 const Avatar = styled(Img)`
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
   position: relative;
   mix-blend-mode: multiply;
   filter: grayscale(100%) contrast(1);
@@ -128,7 +130,7 @@ class About extends Component {
         <H3>{frontmatter.title}</H3>
         <FlexContainer>
           <ContentContainer>
-            <p dangerouslySetInnerHTML={{ __html: html }} />
+            <P dangerouslySetInnerHTML={{ __html: html }} />
             <SkillsContainer>
               {frontmatter.skills &&
                 frontmatter.skills.map((skill, i) => <Skill key={i}>{skill}</Skill>)}

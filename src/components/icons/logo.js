@@ -1,27 +1,30 @@
 import React from 'react';
 
 const IconLogo = () => (
-  <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <title>Loader Logo</title>
+  <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 96">
+    <title>Logo</title>
     <g>
-      <g id="B" transform="translate(39.000000, 32.000000)">
-        <path
-          d="M 9.2 17.15 L 25.05 32.35 L 21.75 35.75 L 4.75 19.05 L 4.75 35.15 L 0 35.15 L 0 0.15 L 4.75 0.15 L 4.75 16.1 L 19.65 0 L 22.85 2.95 L 9.2 17.15 Z"
-          // fill="#64FFDA"
-        />
+      <title>Layer 1</title>
+      <g id="Logo">
+        <g id="svg_1">
+          <polygon points="42,3 3,25 3,70 42,93 81,71 81,26 " stroke="#64FFDA" id="Shape" />
+        </g>
       </g>
-      <path
-        stroke="#64FFDA"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M 50, 5
-                  L 11, 27
-                  L 11, 72
-                  L 50, 95
-                  L 89, 73
-                  L 89, 28 z"
-      />
+      <text
+        stroke="#000"
+        transform="matrix(1.9691879352801038,0,0,1.7788181938548917,-24.626802824122194,-16.421393422937058) "
+        xmlSpace="preserve"
+        textAnchor="start"
+        fontFamily="Georgia, Times, 'Times New Roman', serif"
+        fontSize="24"
+        id="svg_5"
+        y="43.750987"
+        x="26.015647"
+        strokeOpacity="null"
+        strokeWidth="0"
+        fill="#64ffda">
+        R
+      </text>
     </g>
   </svg>
 );
